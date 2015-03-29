@@ -11,7 +11,7 @@
 (defn query! [q]
   {:query q
    :results (keep-indexed
-             (fn [idx {{:keys [href]} :attrs} result]
+             (fn [idx {{:keys [href]} :attrs}]
                (when (.contains href  "ardoq")
                  {:rank (inc idx)
                   :link href}))
